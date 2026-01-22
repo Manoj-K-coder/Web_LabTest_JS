@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        document.write("<h1>Regular Array. </h1>");
+        a = new Array();
+        for(i =0;i<5;i++){
+            a[i]=i+1;
+            document.write("List of Customers "+a[i]+"<br>");
+        }
+
+        document.write("<h1>Condened  Array. </h1>");
+        b = new Array(1,2,3,4,5,6);
+        for(i =0;i<5;i++){
+            document.write( b[i] +"<br>");
+        }
+
+        document.write("<h1>Literal  Array. </h1>");
+        day = new Array();
+        day[0]="Sunday";
+        day[1]="Mondat";
+        day[2]="Tuesday";
+        day[3]="Wednesday";
+        day[4]="Thursday";
+        day[5]="Friday";
+        day[6]="sarturday";
+        for(i in day){
+            document.write(day[i]+"<br>");
+        }
+
+        document.write("<h1> Javascript Array methods");
+        mark=new Array(112,115,145,123,125,120);
+        aysort=mark.sort();
+        document.write("<br>"+aysort+"<br>");
+
+        document.write("<h1> Javascript Array Reverse Method");
+        mark=new Array(112,115,145,123,125,120);
+        document.write("<br>"+"The original array"+"<br>"+mark+"<br>");
+        let aysort1=mark.reverse();
+        document.write("<br>"+aysort1+"<br>");
+
+        document.write("<br>"+"<h1> Concatination Of Array</h1>");
+        b = new Array(1,2,3,4,5,6);
+        let conc =b.concat(50,60);
+        document.write("<h1>"+conc);
+
+        document.write("<br>"+"<h1> Concatination Of String Array</h1>");
+    
+        c= new Array('Mnau','Manjunath','Adarsh');
+        let arrayconact = c.concat('Vinay','Gowtham');
+        document.write("<h1>"+arrayconact);
+        
+        document.write("<br>"+"<h1> Slice Of Array</h1>");     
+        d= new Array(1,2,3,4,5);
+        let arrayslice = d.slice(1,4);
+        document.write("<h1>"+arrayslice)    
+        
+        document.write("<br>"+"<h1> Poping Of Array</h1>");
+        e = new Array(1,2,3,4,5,6,10);
+        let arraypop =e.pop();
+        document.write("<h1>"+e);
+
+        document.write("<br>"+"<h1> Pushing Of Array</h1>");
+        f = new Array(1,2,3,4,5,6,10);
+        let arraypush =f.push(4);
+        document.write("<h1>"+f);
+
+        document.write("<br>"+"<h1> Unshift Of Array</h1>");
+        g = new Array(1,2,3,4,5,6,10);
+        let arrayunshift =g.unshift(4);
+        document.write("<h1>"+g);
+    
+        document.write("<br>"+"<h1> Shift Of Array</h1>");
+        h = new Array(1,2,3,4,5,6,10);
+        let arrayshift =h.shift();
+         document.write("<h1>"+h);
+        
+
+    
+    </script>
+</body>
+</html>
