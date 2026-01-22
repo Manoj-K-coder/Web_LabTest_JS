@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression</title>
+</head>
+<body>
+
+<script>
+let exp1 =/\d+/g;
+let res="This is January 2026 ".match(exp1);
+document.write(res+"<br>");
+
+let exp4=/Manoj/g;
+let details = "My name is Manoj , Manoj is bad boy , Manoj is fail student".match(exp4,);
+document.write(details+"<br>");
+
+let exp2=/Manoj/g;
+let details2 = "My name is Manoj , Manoj is bad boy , Manoj is fail student".replace(exp2,"Adarsh");
+document.write(details2+"<br>");
+
+let exp3 = /Manoj/g;
+let details1 = "My name is Manoj , Manoj is bad boy , Manoj is fail student".search(exp3);
+document.write(details1);
+</script>
+
+</body>
+</html>
