@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Element Access Methods</title>
+</head>
+<body>
+
+  <h1 id="title">Hello World</h1>
+  <h2 name="name">By name</h2>
+
+  <p class="text">Paragraph 2</p>
+ 
+
+ 
+  <script>
+ let c = document.getElementById("title").style.color = "green";
+ document.write(c);
+    let d = document.getElementsByName("name")[0].style.color = "blue";
+ document.write(d);
+     let f = document.getElementsByTagName("p")[0].style.color = "pink";
+ document.write(f);
+  </script>
+
+</body>
+</html>
