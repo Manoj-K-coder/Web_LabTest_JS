@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+Enter Usn :
+<input type="text" name="usn" id="usn" placeholder="Enter the usn">
+    <button onclick="usnvalidate()">Submit</button>
+     <h3 id ="result1"></h3>
+
+<br>
+
+Enter Email :
+<input type="email" name="email" id="email" placeholder="Enter the email">
+    <button onclick="emailvalidate()">Submit</button>
+ <h3 id ="result2"></h3>
+<br>
+    <button onclick="validate()">Submit</button>
+
+<script>
+function usnvalidate(){
+    var usn = document.getElementById("usn").value;
+    //1TU25MC001
+    var usnpattern =/^1[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{3}$/;
+    if(usnpattern.test(usn)){
+        document.getElementById("result1").style.color="blue";
+        document.getElementById("result1").innerHTML="The usn is valid"
+            return true;
+
+    }else{
+        document.getElementById("result1").style.color="red";
+        document.getElementById("result1").innerHTML="The usn is invalid"
+            return false;
+
+    }
+}
+
+function emailvalidate(){
+    var email = document.getElementById("email").value;
+    var emailpattern =/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.+-]+\.[a-zA-Z]{2,}$/;
+
+    if(emailpattern.test(email)){
+        document.getElementById("result2").style.color="blue";
+        document.getElementById("result2").innerHTML="The email is valid"
+        return true;
+
+    }else{
+        document.getElementById("result2").style.color="red";
+        document.getElementById("result2").innerHTML="The email is invalid"
+            return false;
+
+    }
+}
+
+function validate(){
+    if(usnvalidate()&& emailvalidate()){
+        alert("The form is valid");
+    }else{
+alert("The form is invalid");
+    }
+}
+</script>
+</body>
+</html>
