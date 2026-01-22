@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 300px;
+            height: 150px;
+            border: 2px solid;
+            text-align: center;
+            font-size: 50px;   
+            line-height: 150px; 
+        }
+    </style>
+</head>
+<body>
+    <div id="box" onmousedown="mouseDown()" onmouseup="mouseUp()">
+        Perform Mouse Action
+    </div>
+
+    <p id="result"></p>
+
+    <script>
+        function mouseDown() {
+            document.getElementById("result").innerHTML = "Mouse button clicked";
+            document.getElementById("box").style.backgroundColor = "orange";
+        }
+
+        function mouseUp() {
+            document.getElementById("result").innerHTML = "Mouse button released";
+            document.getElementById("box").style.backgroundColor = "green";
+        }
+    </script>
+</body>
+</html>
