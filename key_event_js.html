@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,25 +13,33 @@
             font-size: 50px;   
             line-height: 150px; 
         }
+        p{
+            font-size: 100px;
+        }
     </style>
 </head>
 <body>
-    <div id="box" onmousedown="mouseDown()" onmouseup="mouseUp()">
-        Perform Mouse Action
+
+    <div id="box">
+        Press Any Key
     </div>
 
-    <p id="result"></p>
+    <p id="result" style="color: orange;"></p>
+        <p id="result2" style="color: orange;"></p>
+
 
     <script>
-        function mouseDown() {
-            document.getElementById("result").innerHTML = "Mouse button clicked";
-            document.getElementById("box").style.backgroundColor = "orange";
+        document.onkeydown = function () {
+             document.getElementById("box").style.backgroundColor = "orange";
+            document.getElementById("result2").innerHTML = "Key Pressed";
         }
 
-        function mouseUp() {
-            document.getElementById("result").innerHTML = "Mouse button released";
-            document.getElementById("box").style.backgroundColor = "green";
+        document.onkeyup = function () {
+             document.getElementById("box").style.backgroundColor = "green";
+                        document.getElementById("result2").innerHTML = " Key Released";
+
         }
     </script>
+
 </body>
 </html>
