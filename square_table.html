@@ -1,0 +1,43 @@
+<!-- 
+Develop a JavaScript embedded HTML document to display first n integers and their
+squares in two columns of a table. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Master of Computer Applications</h1>
+
+<script>
+  // Take input from user
+  let n = prompt("Enter a number:");
+
+  // Convert input to number
+  n = parseInt(n);
+
+  // Start the table
+  document.write("<table>");
+  document.write("<tr><th>Number</th><th>Square</th></tr>");
+
+  // Loop to generate rows from 1 to user-entered number
+  for (let i = 1; i <= n; i++) {
+      let square = i * i;
+      document.write("<tr><td>" + i + "</td><td>" + square + "</td></tr>");
+  }
+
+  // End the table
+  document.write("</table>");
+</script>
+
+</body>
+</html>
