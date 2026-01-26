@@ -1,0 +1,49 @@
+<!-- Write a JavaScript program to: Accept marks of 3 subjects in an array, Calculate total and
+average, Display grade using conditional statement. Illustrate the working of function for
+the above case. -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Program</title>
+</head>
+<body>
+
+<h3>Student Result</h3>
+
+<script>
+function calculateResult(marks) {
+    let total = 0;
+
+    for (let i = 0; i < marks.length; i++) {
+        total += marks[i];
+    }
+
+    let average = total / marks.length;
+    let grade;
+
+    if (average >= 75) {
+        grade = "A";
+    } else if (average >= 60) {
+        grade = "B";
+    } else if (average >= 50) {
+        grade = "C";
+    } else if (average >= 40) {
+        grade = "D";
+    } else {
+        grade = "Fail";
+    }
+
+    document.write("Marks: " + marks + "<br>");
+    document.write("Total Marks: " + total + "<br>");
+    document.write("Average Marks: " + average + "%"+"<br>");
+    document.write("Grade: " + grade);
+}
+
+let marksArray = [50,50,50];
+calculateResult(marksArray);
+</script>
+
+</body>
+</html>
