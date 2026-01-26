@@ -1,0 +1,89 @@
+<!-- Create a complex component that will render 3 stationary item images, name of item, price
+as shown in the sample figure above. Create a form input to take the quantity from the user
+When the quantity of the item is entered the total bill amount of the order needs to be
+calculated and displayed at the bottom. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Stationery Shop</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-5">
+    
+    <!-- Page Heading -->
+    <h2 class="text-center mb-4">Stationery Items</h2>
+
+    <div class="row text-center">
+
+        <!-- Item 1 -->
+        <div class="col-md-4">
+            <div class="card p-3">
+                <!-- Item Image -->
+                <img src="https://via.placeholder.com/150" class="card-img-top">
+
+                <!-- Item Name and Price -->
+                <h5 class="mt-2">Notebook</h5>
+                <p class="card-text">Price: ₹50</p>
+
+                <!-- Quantity Input -->
+                <input type="number" class="form-control" placeholder="Quantity"
+                       oninput="calculateTotal()" id="q1">
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="col-md-4">
+            <div class="card p-3">
+                <img src="https://via.placeholder.com/150" class="card-img-top">
+                <h5 class="mt-2">Pen</h5>
+                <p>Price: ₹10</p>
+                <input type="number" class="form-control" placeholder="Quantity"
+                       oninput="calculateTotal()" id="q2">
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="col-md-4">
+            <div class="card p-3">
+                <img src="https://via.placeholder.com/150" class="card-img-top">
+                <h5 class="mt-2">Pencil</h5>
+                <p>Price: ₹5</p>
+                <input type="number" class="form-control" placeholder="Quantity"
+                       oninput="calculateTotal()" id="q3">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Total Bill Display -->
+    <div class="mt-4 text-center">
+        <h4>Total Bill Amount: ₹<span id="total">0</span></h4>
+    </div>
+
+</div>
+
+<script>
+    // Function to calculate total bill amount
+    function calculateTotal() {
+
+        // Get quantity values (default to 0 if empty)
+        let q1 = document.getElementById("q1").value;
+        let q2 = document.getElementById("q2").value;
+        let q3 = document.getElementById("q3").value;
+
+        // Calculate total cost
+        let total = (q1 * 50) + (q2 * 10) + (q3 * 5);
+
+        // Display total amount
+        document.getElementById("total").innerText = total;
+    }
+</script>
+
+</body>
+</html>
