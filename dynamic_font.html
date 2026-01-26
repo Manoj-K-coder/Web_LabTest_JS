@@ -1,0 +1,48 @@
+<!-- Design a webpage using HTML that changes color and font of a text dynamically. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Text Style</title>
+    <style>
+        #text {
+            font-size: 24px;
+            color: black;
+        }
+        label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h3 id="text">Change My Style!</h3>
+
+<!-- Font Selector -->
+<label for="fontSelect">Choose Font:</label>
+<select id="fontSelect" onchange="changeStyle()">
+    <option value="Arial">Arial</option>
+    <option value="Verdana">Verdana</option>
+    <option value="Times New Roman">Times New Roman</option>
+    <option value="Courier New">Courier New</option>
+    <option value="Georgia">Georgia</option>
+</select>
+
+<!-- Color Picker -->
+<label for="colorPicker">Choose Color:</label>
+<input type="color" id="colorPicker" onchange="changeStyle()">
+
+<script>
+function changeStyle() {
+    const text = document.getElementById("text");
+    const font = document.getElementById("fontSelect").value;
+    const color = document.getElementById("colorPicker").value;
+
+    text.style.fontFamily = font;
+    text.style.color = color;
+    
+}
+</script>
+
+</body>
+</html>
