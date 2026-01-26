@@ -1,0 +1,139 @@
+<!-- Design a webpage for a Student Registration Form using HTML and CSS. Validate the
+form using JavaScript. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 400px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Student Registration</h2>
+
+    <form onsubmit="return validateForm()">
+
+        <label>Student Name</label>
+        <input type="text" id="name">
+        <span class="error" id="nameError"></span>
+
+        <label>Email</label>
+        <input type="text" id="email">
+        <span class="error" id="emailError"></span>
+
+        <label>Age</label>
+        <input type="number" id="age">
+        <span class="error" id="ageError"></span>
+
+        <label>Course</label>
+        <select id="course">
+            <option value="">Select Course</option>
+            <option>MCA</option>
+            <option>MBA</option>
+            <option>BCA</option>
+        </select>
+        <span class="error" id="courseError"></span>
+
+        <button type="submit">Register</button>
+
+    </form>
+</div>
+
+<script>
+function validateForm() {
+
+    let valid = true;
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let age = document.getElementById("age").value;
+    let course = document.getElementById("course").value;
+
+    document.getElementById("nameError").innerText = "";
+    document.getElementById("emailError").innerText = "";
+    document.getElementById("ageError").innerText = "";
+    document.getElementById("courseError").innerText = "";
+
+    if (name === "") {
+        document.getElementById("nameError").innerText = "Name is required";
+        valid = false;
+    }
+
+    if (email === "") {
+        document.getElementById("emailError").innerText = "Email is required";
+        valid = false;
+    } else if (!email.includes("@")) {
+        document.getElementById("emailError").innerText = "Invalid email format";
+        valid = false;
+    }
+
+    if (age === "" || age < 18) {
+        document.getElementById("ageError").innerText = "Age must be 18 or above";
+        valid = false;
+    }
+
+    if (course === "") {
+        document.getElementById("courseError").innerText = "Please select a course";
+        valid = false;
+    }
+
+    if (valid) {
+        alert("Registration Successful!");
+    }
+
+    return valid;
+}
+</script>
+
+</body>
+</html>
