@@ -1,0 +1,35 @@
+<!-- Write a function reverse that takes a variable number of strings as argument and prints the
+strings in the reverse order in the console. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse String</title>
+</head>
+<body>
+
+<h2>Reverse String Program</h2>
+<button onclick="reverseString()">Enter a String</button>
+
+<script>
+function reverseString() {
+    // Take input from user
+    let input = prompt("Enter a string to reverse:");
+
+    if (input === null || input.trim() === "") {
+        alert("No input provided!");
+        return;
+    }
+
+    // Reverse the string using split, reverse, join
+    let reversed = input.split("").reverse().join("");
+
+    // Display the reversed string
+    alert("Reversed String: " + reversed);
+    console.log("Original:", input);
+    console.log("Reversed:", reversed);
+}
+</script>
+
+</body>
+</html>
