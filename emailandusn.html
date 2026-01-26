@@ -1,0 +1,73 @@
+<!-- Create a webpage to demonstrate form validation for email and password using JavaScript. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email And USN Validation</title>
+</head>
+<body>
+
+    Enter USN:
+    <input type="text" id="usn" placeholder="Enter USN">
+    <button onclick="validation()">Validate USN</button>
+
+    <h3 id="result1"></h3>
+
+    Enter Email:
+    <input type="text" id="email" placeholder="Enter Email">
+    <button onclick="emailvalidation()">Validate Email</button>
+
+    <h3 id="result2"></h3>
+
+    <button onclick="validate()">Submit</button>
+
+    <script>
+        function validation() {
+            var usn = document.getElementById("usn").value;
+
+            var pattern = /^1[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{3}$/;
+
+            if (pattern.test(usn)) {
+                document.getElementById("result1").style.color = "green";
+                document.getElementById("result1").innerHTML = "USN is valid";
+                return true;
+            } 
+            else {
+                document.getElementById("result1").style.color = "red";
+                document.getElementById("result1").innerHTML = "Invalid format. Example: 1TU25MC001";
+                return false;
+            }
+        }
+
+        function emailvalidation() {
+            var email = document.getElementById("email").value;
+
+            var emailpattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            if (emailpattern.test(email)) {
+                document.getElementById("result2").style.color = "green";
+                document.getElementById("result2").innerHTML = "Email is valid";
+                return true;
+            } 
+            else {
+                document.getElementById("result2").style.color = "red";
+                document.getElementById("result2").innerHTML = "Invalid format. Example: test1@gmail.com";
+                return false;
+            }0
+        }
+
+        function validate() {
+            if (validation() && emailvalidation()) {
+                alert("All inputs are valid");
+            }
+            else {
+                alert("Validation failed");
+            }
+            return false;
+        }
+    </script>
+
+</body>
+</html>
