@@ -1,0 +1,109 @@
+<!-- A movie booking website displays 3 movies with poster image, movie name, and ticket
+price. The user enters the number of tickets for each movie and clicks Book Tickets.
+The system calculates:
+● Total ticket cost
+● Booking time
+● Show time
+● Booking confirmation summary
+Total bill calculation -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Ticket Booking</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+<div class="container my-5">
+  <h2 class="text-center mb-4">Movie Ticket Booking System</h2>
+
+  <form onsubmit="calculateTickets(event)">
+    <div class="row justify-content-center g-4">
+
+      <!-- Movie 1 -->
+      <div class="col-sm-6 col-md-4">
+        <div class="card text-center h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Inception</h5>
+            <p class="card-text">Ticket Price: <strong>200 INR</strong></p>
+            <label class="form-label">Tickets</label>
+            <input type="number" id="m1" class="form-control w-50 mx-auto" min="0" value="0">
+          </div>
+        </div>
+      </div>
+
+      <!-- Movie 2 -->
+      <div class="col-sm-6 col-md-4">
+        <div class="card text-center h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Interstellar</h5>
+            <p class="card-text">Ticket Price: <strong>250 INR</strong></p>
+            <label class="form-label">Tickets</label>
+            <input type="number" id="m2" class="form-control w-50 mx-auto" min="0" value="0">
+          </div>
+        </div>
+      </div>
+
+      <!-- Movie 3 -->
+      <div class="col-sm-6 col-md-4">
+        <div class="card text-center h-100 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Avengers</h5>
+            <p class="card-text">Ticket Price: <strong>180 INR</strong></p>
+            <label class="form-label">Tickets</label>
+            <input type="number" id="m3" class="form-control w-50 mx-auto" min="0" value="0">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-4">
+      <button type="submit" class="btn btn-danger px-4">
+        Book Tickets
+      </button>
+    </div>
+  </form>
+
+  <!-- Booking Summary -->
+  <div id="bookingSummary" class="text-center fs-5 mt-4"></div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  function calculateTickets(event) {
+    event.preventDefault();
+
+    const price1 = 200;
+    const price2 = 250;
+    const price3 = 180;
+
+    const t1 = Number(document.getElementById("m1").value);
+    const t2 = Number(document.getElementById("m2").value);
+    const t3 = Number(document.getElementById("m3").value);
+
+    const totalCost =
+      (t1 * price1) +
+      (t2 * price2) +
+      (t3 * price3);
+
+    const bookingTime = new Date();
+    const showTime = new Date(bookingTime.getTime() + 2 * 60 * 60000);
+
+    document.getElementById("bookingSummary").innerHTML = `
+      <p class="fw-bold">Booking Summary</p>
+      <p>Total Ticket Cost: <span class="fw-bold text-success">${totalCost} INR</span></p>
+      <p>Booking Time: ${bookingTime.toLocaleString()}</p>
+      <p>Show Time: ${showTime.toLocaleString()}</p>
+    `;
+  }
+</script>
+
+</body>
+</html>
