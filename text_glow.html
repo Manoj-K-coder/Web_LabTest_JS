@@ -1,0 +1,45 @@
+<!-- Design a java script code that displays text “TEXT GROWING” WITH INCREASE IN
+FONT SIZE in the interval of 100ms in RED COLOR, when the font size reaches 50pt it
+displays “TEXT SHRINKING” IN blue color. Then the font size decreases to 5 pt. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Growing and Shrinking</title>
+</head>
+<body>
+
+<h2 id="text">TEXT GROWING</h2>
+
+<script>
+    let text = document.getElementById("text");
+    let size = 5;
+    let growing = true;
+
+    function animateText() {
+        if (growing) {
+            text.style.color = "red";
+            text.innerHTML = "TEXT GROWING";
+            text.style.fontSize = size + "pt";
+            size++;
+
+            if (size > 50) {
+                growing = false;
+            }
+        } else {
+            text.style.color = "blue";
+            text.innerHTML = "TEXT SHRINKING";
+            text.style.fontSize = size + "pt";
+            size--;
+
+            if (size < 5) {
+                growing = true;
+            }
+        }
+    }
+
+    setInterval(animateText, 100);
+</script>
+
+</body>
+</html>
